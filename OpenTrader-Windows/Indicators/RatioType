@@ -1,0 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using System.Linq;
+
+namespace OpenTrader.Indicators
+{
+	public enum RatioType { PositiveSum, PositiveN, ExpectedReturn }
+}
