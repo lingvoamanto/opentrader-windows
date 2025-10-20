@@ -23,7 +23,7 @@ namespace OpenTrader.NeuralNetwork
         /// </summary>
         public List<ISynapse> Outputs { get; set; }
 
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Calculated partial derivate in previous iteration of training process.

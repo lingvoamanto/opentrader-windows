@@ -11,6 +11,9 @@ namespace OpenTrader.NeuralNetwork
         internal INeuron _fromNeuron;
         internal INeuron _toNeuron;
 
+        public INeuron FromNeuron { get { return _fromNeuron; } set { _fromNeuron = value; } }
+        public INeuron ToNeuron { get { return _toNeuron; } set { _toNeuron = value; } }
+
         /// <summary>
         /// Weight of the connection.
         /// </summary>
