@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>OpenTrader</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyName>OpenTrader</AssemblyName>
+    <ApplicationIcon>OpenTrader.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;__WINDOWS__</DefineConstants>
+    <PlatformTarget>x64</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;__WINDOWS__</DefineConstants>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.37" />
+    <PackageReference Include="ILGPU" Version="0.10.1" />
+    <PackageReference Include="ILGPU.Algorithms" Version="0.9.2" />
+    <PackageReference Include="Svg" Version="3.3.0" />
+    <PackageReference Include="System.Drawing.Common" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Images\Add.png" />
+    <None Remove="Images\Announcements.png" />
+    <None Remove="Images\Arc.png" />
+    <None Remove="Images\Book.png" />
+    <None Remove="Images\Candlestick.png" />
+    <None Remove="Images\Close.png" />
+    <None Remove="Images\Comment.png" />
+    <None Remove="Images\Compile.png" />
+    <None Remove="Images\Copy.png" />
+    <None Remove="Images\Delete.png" />
+    <None Remove="Images\Dividends.png" />
+    <None Remove="Images\Download.png" />
+    <None Remove="Images\Edit page.png" />
+    <None Remove="Images\Edit.png" />
+    <None Remove="Images\Fishing net.png" />
+    <None Remove="Images\Folder.png" />
+    <None Remove="Images\Form.png" />
+    <None Remove="Images\History.png" />
+    <None Remove="Images\Line.png" />
+    <None Remove="Images\Measure.png" />
+    <None Remove="Images\Move.png" />
+    <None Remove="Images\Now.png" />
+    <None Remove="Images\Optimise.png" />
+    <None Remove="Images\Properties.png" />
+    <None Remove="Images\Save as.png" />
+    <None Remove="Images\Save.png" />
+    <None Remove="Images\Scenario.png" />
+    <None Remove="Images\Search online.png" />
+    <None Remove="Images\Selection.png" />
+    <None Remove="Images\Sharesies.png" />
+    <None Remove="Images\Spray.png" />
+    <None Remove="Images\Square.png" />
+    <None Remove="Images\Tag.png" />
+    <None Remove="Images\Touch.png" />
+    <None Remove="Images\Week.png" />
+    <None Remove="Images\Zoom in.png" />
+    <None Remove="Images\Zoom out.png" />
+    <None Remove="OpenTrader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Extensions\Math.cs" Link="Extensions\Math.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Strategy\Annotation.cs" Link="Strategy\Annotation.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Strategy\DrawingItem.cs" Link="Strategy\DrawingItem.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Strategy\DrawingMethod.cs" Link="Strategy\DrawingMethod.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Strategy\Optimisation.cs" Link="Strategy\Optimisation.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Strategy\Pane.cs" Link="Strategy\Pane.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Strategy\Phenotype.cs" Link="Strategy\Phenotype.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Strategy\Position.cs" Link="Strategy\Position.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Strategy\StrategyParameter.cs" Link="Strategy\StrategyParameter.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Strategy\TraderScript.cs" Link="Strategy\TraderScript.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\NoteBook\ChartPage.cs" Link="NoteBook\ChartPage.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\NoteBook\EditorPage.cs" Link="NoteBook\EditorPage.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\NoteBook\Language.cs" Link="NoteBook\Language.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\NoteBook\LineStyle.cs" Link="NoteBook\LineStyle.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\NoteBook\LogPage.cs" Link="NoteBook\LogPage.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\NoteBook\PositionPage.cs" Link="NoteBook\PositionPage.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\NoteBook\ProfitPage.cs" Link="NoteBook\ProfitPage.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\NoteBook\TraderBook.cs" Link="NoteBook\TraderBook.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\NoteBook\Parameter\ParameterBar.cs" Link="NoteBook\Parameter\ParameterBar.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Data\ArraySeries.cs" Link="Data\ArraySeries.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Data\Bars.cs" Link="Data\Bars.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Data\ChangedEvent.cs" Link="Data\ChangedEvent.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Data\DataFile.cs" Link="Data\DataFile.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Data\DataFiles.cs" Link="Data\DataFiles.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Data\DataSeries.cs" Link="Data\DataSeries.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Data\DataSet.cs" Link="Data\DataSet.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Data\DataSets.cs" Link="Data\DataSets.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Data\ExternalReader.cs" Link="Data\ExternalReader.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Data\HashTable.cs" Link="Data\HashTable.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Data\Preferences.cs" Link="Data\Preferences.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Data\ReaderCode.cs" Link="Data\ReaderCode.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Data\ReaderCodes.cs" Link="Data\ReaderCodes.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Data\Trade.cs" Link="Data\Trade.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Data\YahooApi.cs" Link="Data\YahooApi.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Data\YahooReader.cs" Link="Data\YahooReader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\NoteBook\Chart\ChartType.cs" Link="NoteBook\Chart\ChartType.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\NoteBook\Chart\IChart.cs" Link="NoteBook\Chart\IChart.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\Annotation.cs" Link="Repository\Annotation.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\Bar.cs" Link="Repository\Bar.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\BaseBar.cs" Link="Repository\BaseBar.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\CandleData.cs" Link="Repository\CandleData.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\Column.cs" Link="Repository\Column.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\Connection.cs" Link="Repository\Connection.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\DataFile.cs" Link="Repository\DataFile.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\DataSet.cs" Link="Repository\DataSet.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\Dividend.cs" Link="Repository\Dividend.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\IRepository.cs" Link="Repository\IRepository.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\JournalEntry.cs" Link="Repository\JournalEntry.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\ReaderCode.cs" Link="Repository\ReaderCode.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\Manager.cs" Link="Repository\Manager.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\Preferences.cs" Link="Repository\Preferences.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\Repository.cs" Link="Repository\Repository.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\TableInfo.cs" Link="Repository\TableInfo.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\Trade.cs" Link="Repository\Trade.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\Transaction.cs" Link="Repository\Transaction.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Repository\TrendLine.cs" Link="Repository\TrendLine.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\DebugHelper.cs" Link="DebugHelper.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Sharesies.cs" Link="Sharesies.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Profile.cs" Link="Profile.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Candles\Calibration.cs" Link="Candles\Calibration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\BBand.cs" Link="Indicators\BBand.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\Candles.cs" Link="Indicators\Candles.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\CandleRangeType.cs" Link="Indicators\CandleRangeType.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\CandleSetting.cs" Link="Indicators\CandleSetting.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\CandleSettingType.cs" Link="Indicators\CandleSettingType.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\EMA.cs" Link="Indicators\EMA.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\ExtensionMethods.cs" Link="Indicators\ExtensionMethods.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\FrechetDistance.cs" Link="Indicators\FrechetDistance.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\Patterns.cs" Link="Indicators\Patterns.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\PeriodHigh.cs" Link="Indicators\PeriodHigh.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\PeriodLow.cs" Link="Indicators\PeriodLow.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\Python.cs" Link="Indicators\Python.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\RatioType.cs" Link="Indicators\RatioType.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\RelativeSlope.cs" Link="Indicators\RelativeSlope.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\SMA.cs" Link="Indicators\SMA.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\StdDev.cs" Link="Indicators\StdDev.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\Stochastic.cs" Link="Indicators\Stochastic.cs" />
+    <Compile Include="..\..\OpenTrader-Cocoa\OpenTrader-Cocoa\Indicators\Value.cs" Link="Indicators\Value.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Accord" Version="3.8.0" />
+    <PackageReference Include="Accord.Audio" Version="3.8.0" />
+    <PackageReference Include="Accord.Statistics" Version="3.8.0" />
+    <PackageReference Include="AvalonEdit" Version="6.1.2.30" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.11.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1020.30" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="SoapHttpClient" Version="3.0.0" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.115" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+    <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Loader" Version="4.3.0" />
+    <PackageReference Include="WpfRichText2" Version="1.0.17" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Add.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Announcements.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Arc.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Book.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Candlestick.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Close.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Comment.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Compile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Copy.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Delete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dividends.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Download.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Edit page.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Edit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Fishing net.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Folder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Form.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\History.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Line.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Measure.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Move.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Now.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Optimise.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Properties.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Save as.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Save.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Scenario.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Search online.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Selection.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Sharesies.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Spray.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Square.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Tag.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Touch.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Week.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Zoom in.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Zoom out.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OpenTrader.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Themes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\Accessibility.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\accord.audio\3.8.0\lib\netstandard2.0\Accord.Audio.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\accord\3.8.0\lib\netstandard2.0\Accord.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\accord.math\3.8.0\lib\netstandard2.0\Accord.Math.Core.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\accord.math\3.8.0\lib\netstandard2.0\Accord.Math.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\accord.statistics\3.8.0\lib\netstandard2.0\Accord.Statistics.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\fizzler\1.2.1\lib\netstandard2.0\Fizzler.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\htmlagilitypack\1.11.37\lib\netstandard2.0\HtmlAgilityPack.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\avalonedit\6.1.2.30\lib\netcoreapp3.1\ICSharpCode.AvalonEdit.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\ilgpu.algorithms\0.9.2\lib\netcoreapp2.0\ILGPU.Algorithms.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\ilgpu\0.10.1\lib\netstandard2.1\ILGPU.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\microsoft.codeanalysis.csharp\3.11.0\lib\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\microsoft.codeanalysis.common\3.11.0\lib\netcoreapp3.1\Microsoft.CodeAnalysis.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\Microsoft.CSharp.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\microsoft.extensions.configuration.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\microsoft.extensions.configuration.binder\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\microsoft.extensions.configuration\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\microsoft.extensions.dependencyinjection\2.2.0\lib\netcoreapp2.0\Microsoft.Extensions.DependencyInjection.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\microsoft.extensions.http\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Http.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\microsoft.extensions.logging.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\microsoft.extensions.logging\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\microsoft.extensions.options\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\microsoft.extensions.primitives\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\Microsoft.VisualBasic.Core.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\Microsoft.VisualBasic.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\microsoft.web.webview2\1.0.1020.30\lib\netcoreapp3.0\Microsoft.Web.WebView2.Core.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\microsoft.web.webview2\1.0.1020.30\lib\netcoreapp3.0\Microsoft.Web.WebView2.WinForms.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\microsoft.web.webview2\1.0.1020.30\lib\netcoreapp3.0\Microsoft.Web.WebView2.Wpf.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\Microsoft.Win32.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\Microsoft.Win32.Registry.AccessControl.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\Microsoft.Win32.Registry.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\mscorlib.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\netstandard.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\newtonsoft.json\13.0.1\lib\netstandard2.0\Newtonsoft.Json.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\PresentationCore.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\PresentationFramework.Aero.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\PresentationFramework.Aero2.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\PresentationFramework.AeroLite.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\PresentationFramework.Classic.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\PresentationFramework.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\PresentationFramework.Luna.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\PresentationFramework.Royale.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\PresentationUI.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\ReachFramework.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\runtime.osx.10.10-x64.corecompat.system.drawing\5.8.64\lib\netstandard2.0\runtime.osx.10.10-x64.CoreCompat.System.Drawing.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\soaphttpclient\3.0.0\lib\netstandard2.0\SoapHttpClient.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\svg\3.3.0\lib\netcoreapp3.1\Svg.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.AppContext.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Buffers.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.CodeDom.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Collections.Concurrent.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Collections.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\system.collections.immutable\5.0.0\lib\netstandard2.0\System.Collections.Immutable.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Collections.NonGeneric.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Collections.Specialized.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.ComponentModel.Annotations.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.ComponentModel.DataAnnotations.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.ComponentModel.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.ComponentModel.EventBasedAsync.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.ComponentModel.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.ComponentModel.TypeConverter.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Configuration.ConfigurationManager.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Configuration.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Console.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Core.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Data.Common.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Data.DataSetExtensions.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Data.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\stub.system.data.sqlite.core.netstandard\1.0.115\lib\netstandard2.1\System.Data.SQLite.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Design.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Diagnostics.Contracts.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Diagnostics.Debug.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Diagnostics.EventLog.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Diagnostics.FileVersionInfo.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Diagnostics.Process.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Diagnostics.StackTrace.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Diagnostics.TextWriterTraceListener.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Diagnostics.Tools.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Diagnostics.TraceSource.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Diagnostics.Tracing.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.DirectoryServices.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\system.drawing.common\5.0.2\ref\netcoreapp3.0\System.Drawing.Common.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Drawing.Design.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Drawing.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Drawing.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Dynamic.Runtime.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Globalization.Calendars.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Globalization.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Globalization.Extensions.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.IO.Compression.Brotli.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.IO.Compression.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.IO.Compression.FileSystem.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.IO.Compression.ZipFile.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.IO.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.IO.FileSystem.AccessControl.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.IO.FileSystem.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.IO.FileSystem.DriveInfo.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.IO.FileSystem.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.IO.FileSystem.Watcher.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.IO.IsolatedStorage.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.IO.MemoryMappedFiles.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.IO.Packaging.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.IO.Pipes.AccessControl.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.IO.Pipes.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.IO.UnmanagedMemoryStream.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Linq.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Linq.Expressions.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Linq.Parallel.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Linq.Queryable.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Memory.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.Http.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.HttpListener.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.Mail.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.NameResolution.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.NetworkInformation.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.Ping.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.Requests.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.Security.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.ServicePoint.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.Sockets.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.WebClient.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.WebHeaderCollection.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.WebProxy.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.WebSockets.Client.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Net.WebSockets.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Numerics.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Numerics.Vectors.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.ObjectModel.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Printing.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Reflection.DispatchProxy.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Reflection.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Reflection.Emit.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Reflection.Emit.ILGeneration.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Reflection.Emit.Lightweight.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Reflection.Extensions.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\system.reflection.metadata\5.0.0\lib\netstandard2.0\System.Reflection.Metadata.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Reflection.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Reflection.TypeExtensions.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Resources.Extensions.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Resources.Reader.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Resources.ResourceManager.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Resources.Writer.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\system.runtime.compilerservices.unsafe\5.0.0\ref\netstandard2.1\System.Runtime.CompilerServices.Unsafe.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Runtime.CompilerServices.VisualC.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Runtime.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Runtime.Extensions.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Runtime.Handles.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Runtime.InteropServices.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Runtime.InteropServices.WindowsRuntime.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Runtime.Intrinsics.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Runtime.Loader.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Runtime.Numerics.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Runtime.Serialization.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Runtime.Serialization.Formatters.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Runtime.Serialization.Json.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Runtime.Serialization.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Runtime.Serialization.Xml.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Security.AccessControl.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Security.Claims.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Security.Cryptography.Algorithms.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Security.Cryptography.Cng.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Security.Cryptography.Csp.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Security.Cryptography.Encoding.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Security.Cryptography.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Security.Cryptography.X509Certificates.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Security.Cryptography.Xml.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Security.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Security.Permissions.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Security.Principal.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Security.Principal.Windows.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Security.SecureString.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.ServiceModel.Web.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.ServiceProcess.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Text.Encoding.CodePages.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Text.Encoding.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Text.Encoding.Extensions.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Text.Encodings.Web.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Text.Json.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Text.RegularExpressions.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Threading.AccessControl.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Threading.Channels.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Threading.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Threading.Overlapped.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Threading.Tasks.Dataflow.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Threading.Tasks.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Threading.Tasks.Extensions.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Threading.Tasks.Parallel.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Threading.Thread.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Threading.ThreadPool.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Threading.Timer.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Transactions.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Transactions.Local.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.ValueTuple.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Web.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Web.HttpUtility.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Windows.Controls.Ribbon.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Windows.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Windows.Extensions.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Windows.Forms.Design.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Windows.Forms.Design.Editors.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Windows.Forms.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Windows.Input.Manipulations.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Windows.Presentation.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\System.Xaml.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Xml.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Xml.Linq.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Xml.ReaderWriter.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Xml.Serialization.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Xml.XDocument.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Xml.XmlDocument.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Xml.XmlSerializer.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Xml.XPath.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Xml.XPath.XDocument.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\UIAutomationClient.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\UIAutomationClientSideProviders.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\UIAutomationProvider.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\UIAutomationTypes.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\WindowsBase.dll" />
+    <ReferencePath Include="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.1.0\ref\netcoreapp3.1\WindowsFormsIntegration.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\wpfrichtext2\1.0.17\lib\net45\WpfRichText.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\extended.wpf.toolkit\2.5.0\lib\net40\Xceed.Wpf.AvalonDock.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\extended.wpf.toolkit\2.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\extended.wpf.toolkit\2.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\extended.wpf.toolkit\2.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\extended.wpf.toolkit\2.5.0\lib\net40\Xceed.Wpf.DataGrid.dll" />
+    <ReferencePath Include="C:\Users\choos\.nuget\packages\extended.wpf.toolkit\2.5.0\lib\net40\Xceed.Wpf.Toolkit.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Controls\AnnotationControl.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Controls\ChartControl.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Controls\EditorControl.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Controls\LineMenuControl.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Controls\MeasureControl.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Controls\ParamaterControl.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Controls\Spinner.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Controls\StatusControl.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Controls\TradeControl.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\MainWindow.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Windows\AnnouncementsWindow.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Windows\CandleWindow.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Windows\DataFileWindow.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Windows\DataSetWindow.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Windows\DivendsWindow.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Windows\JournalWindow.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Windows\NewsWindow.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Windows\Preferences.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Windows\SharesiesWindow.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Windows\TradeWindow.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\Windows\WeekWindow.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\App.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\OpenTrader_Content.g.cs" />
+    <Compile Include="D:\Dropbox\OpenTrader\OpenTrader-Windows\OpenTrader-Windows\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs" />
+  </ItemGroup>
+</Project>

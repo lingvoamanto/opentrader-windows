@@ -1,0 +1,33 @@
+# Build artifacts
+bin/
+obj/
+*.log
+*.cache
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio settings
+.vs/
+.vscode/
+
+# Installer projects
+*.aip
+*.aiproj
+publish/
+
+# Debug and release folders
+[Dd]ebug*/
+[Rr]elease*/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Others
+Thumbs.db
+Desktop.ini

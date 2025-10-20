@@ -1,0 +1,24 @@
+﻿<Window x:Class="OpenTrader.Windows.CandleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OpenTrader.Windows"
+        mc:Ignorable="d"
+        Title="Candle Data" Height="450" Width="800">
+    <Grid>
+        <DataGrid Name="CandleGrid" Grid.Row="1"   Grid.Column="0" AlternatingRowBackground = "LightGray" AlternationCount = "2"  AutoGenerateColumns="false">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="2*" IsReadOnly="true" />
+                <DataGridTextColumn Header="Market" Binding="{Binding MarketType}" Width="1*" IsReadOnly="true" />
+                <DataGridTextColumn Header="Expected Return" Binding="{Binding ExpectedReturn}" Width="1.5*" IsReadOnly="true" />
+                <DataGridTextColumn Header="N" Binding="{Binding N}" Width="1*" IsReadOnly="true" />
+                <DataGridTextColumn Header="Sum" Binding="{Binding Sum}"  Width="1.5*" IsReadOnly="true" />
+                <DataGridTextColumn Header="+N" Binding="{Binding PositiveN}"  Width="1*" IsReadOnly="true" />
+                <DataGridTextColumn Header="+Sum" Binding="{Binding PositiveSum}"  Width="1.5*" IsReadOnly="true" />
+                <DataGridTextColumn Header="-N" Binding="{Binding NegativeN}"  Width="1*" IsReadOnly="true" />
+                <DataGridTextColumn Header="-Sum" Binding="{Binding NegativeSum}"  Width="1.5*" IsReadOnly="true" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

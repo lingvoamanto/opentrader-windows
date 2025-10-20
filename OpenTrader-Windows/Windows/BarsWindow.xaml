@@ -1,0 +1,33 @@
+﻿<Window x:Class="OpenTrader.Windows.BarsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OpenTrader.Windows"
+        mc:Ignorable="d"
+        Title="BarsWindow" Height="450" Width="800">
+    <Grid>
+        <DataGrid Name="BarsGrid" Grid.Row="1"   Grid.Column="0" AlternatingRowBackground = "LightGray" AlternationCount = "2" PreviewKeyUp="BarsGrid_PreviewKeyUp" SelectionChanged="BarsGrid_SelectionChanged" AutoGenerateColumns="false">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Date" Width="1*"  >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Date, StringFormat=d/M/yyyy}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding Date}"  />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Open" Binding="{Binding Open}" Width="1*"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="High" Binding="{Binding High}" Width="1*"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Low" Binding="{Binding Low}" Width="1*" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Close" Binding="{Binding Close}"  Width="1*" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Volume" Binding="{Binding Volume}"  Width="1*" ></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

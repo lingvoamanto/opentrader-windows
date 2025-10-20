@@ -1,0 +1,49 @@
+﻿<Window x:Class="OpenTrader.Windows.JournalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OpenTrader.Windows"
+        xmlns:wrt="clr-namespace:WpfRichText;assembly=WpfRichText"
+        mc:Ignorable="d"
+        Title="OpenTrader Journal" Height="450" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ToolBar Height="30"  Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+            <Button Height="24" Click="AddButton_Click" Margin="1,0,0,0" ToolTip="Add" >
+                <Image  Source="/Images/Add.png" />
+            </Button>
+            <Button Height="24" Click="SaveButton_Click" Margin="1,0,0,0" ToolTip="Save" >
+                <Image  Source="/Images/Save.png" />
+            </Button>
+            <Button Height="24"  Click="DeleteButton_Click" Margin="1,0,0,0" ToolTip="Delete" >
+                <Image  Source="/Images/Delete.png" />
+            </Button>
+        </ToolBar>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+            <TextBox Name="Description" BorderBrush="Transparent" FontWeight="Bold"></TextBox>
+        </StackPanel>
+        <Grid Grid.Row="2" Grid.Column="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer Width="150" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+                <ListBox SelectionChanged="ListBox_SelectionChanged" Name="ListBox" />
+            </ScrollViewer>
+            <DatePicker Height="25" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Name="DatePicker" SelectedDateChanged="SelectedDateChanged"></DatePicker>
+            <wrt:RichTextEditor Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="Editor" Grid.Row="1" Grid.Column="1" />
+        </Grid>
+    </Grid>
+</Window>
